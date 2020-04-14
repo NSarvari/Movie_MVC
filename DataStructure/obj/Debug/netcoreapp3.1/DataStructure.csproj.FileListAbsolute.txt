@@ -1,0 +1,8 @@
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.deps.json
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csprojAssemblyReference.cache
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfoInputs.cache
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfo.cs
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.pdb
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
+C:\Users\nabii\source\repos\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb
