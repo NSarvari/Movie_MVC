@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nabii\\source\\repos\\MovieReviews\\DataStructure\\DataStructure.csproj": {}
+    "D:\\Uni\\2ри семестър\\.NET\\Struggle-master (1)\\Struggle-master\\DataStructure\\DataStructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nabii\\source\\repos\\MovieReviews\\DataStructure\\DataStructure.csproj": {
+    "D:\\Uni\\2ри семестър\\.NET\\Struggle-master (1)\\Struggle-master\\DataStructure\\DataStructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nabii\\source\\repos\\MovieReviews\\DataStructure\\DataStructure.csproj",
+        "projectUniqueName": "D:\\Uni\\2ри семестър\\.NET\\Struggle-master (1)\\Struggle-master\\DataStructure\\DataStructure.csproj",
         "projectName": "DataStructure",
-        "projectPath": "C:\\Users\\nabii\\source\\repos\\MovieReviews\\DataStructure\\DataStructure.csproj",
+        "projectPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle-master (1)\\Struggle-master\\DataStructure\\DataStructure.csproj",
         "packagesPath": "C:\\Users\\nabii\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nabii\\source\\repos\\MovieReviews\\DataStructure\\obj\\",
+        "outputPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle-master (1)\\Struggle-master\\DataStructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nabii\\AppData\\Roaming\\NuGet\\NuGet.Config",

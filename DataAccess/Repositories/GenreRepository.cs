@@ -2,25 +2,23 @@
 namespace DataAccess.Repositories
 {
     using DataStructure;
+    using MovieReviews.Data;
     using System.Collections.Generic;
     using System.Linq;
 
-    class GenreRepository : GenericRepository<Genre>
+    public class GenreRepository
     {
-        public GenreRepository() : base(new MovieDbContext())
-        {
-        }
+        private readonly ApplicationDbContext _appDbContext;
 
-        // public List<Movie> GetMovieForGenreByID(int id) => this.GetByID(id).Movies.ToList();
-        public List<Movie> GetMoviesForDirectorByID(int id)
+        public GenreRepository(ApplicationDbContext appDbContext)
         {
-            return this.GetByID(id).Movies.ToList();
+            _appDbContext = appDbContext;
         }
 
         // public List<Movie> GetGenreTypeDrama(string type) => this.context.Genres.Where(Drama => Drama.Type == type).ToList();
         public List<Genre> GetMovieByGenreType(string type)
         {
-            return this.context.Genres.Where(Drama => Drama.Type == type).ToList();
+            return this._appDbContext.Genres.Where(Drama => Drama.Type == type).ToList();
         }
     }
 }

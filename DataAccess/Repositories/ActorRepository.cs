@@ -2,25 +2,23 @@
 namespace DataAccess.Repositories
 {
     using DataStructure;
+    using MovieReviews.Data;
     using System.Collections.Generic;
     using System.Linq;
 
-    class ActorRepository : GenericRepository<Actor>
+    public class ActorRepository 
     {
-        public ActorRepository() : base(new MovieDbContext())
-        { 
+        private readonly ApplicationDbContext _appDbContext;
+
+        public ActorRepository(ApplicationDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
         }
 
         // public List<Actor> GetActorsByFirstName(string firstName) => this.context.Actors.Where(x => x.FirstName == firstName).ToList();
         public List<Actor> GetActorsByFirstName(string firstName)
         {
-            return this.context.Actors.Where(x => x.FirstName == firstName).ToList();
-        }
-
-        // public List<Movie> GetMovieForActorByID(int id) => this.GetByID(id).Movies.ToList();
-        public List<Movie> GetFilmsForActorByID(int id)
-        {
-            return this.GetByID(id).Movies.ToList();
+            return this._appDbContext.Actors.Where(x => x.FirstName == firstName).ToList();
         }
     }
 }

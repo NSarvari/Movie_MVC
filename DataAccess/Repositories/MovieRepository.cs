@@ -2,17 +2,22 @@
 namespace DataAccess.Repositories
 {
     using DataStructure;
+    using MovieReviews.Data;
     using System.Collections.Generic;
     using System.Linq;
 
-    class MovieRepository : GenericRepository<Movie>
+    public class MovieRepository
     {
-        public MovieRepository(MovieDbContext context) : base(context) { }
-
-        // public List<Movie> GetFilmsByReleasedYear(int year) => this.context.Movies.Where(x => x.ReleasedYear > year).ToList();
-        public List<Movie> GetFilmsByReleasedYear(int year)
+        private readonly ApplicationDbContext _appDbContext;
+        public MovieRepository(ApplicationDbContext appDbContext)
         {
-            return this.context.Movies.Where(x => x.ReleasedYear > year).ToList();
+            _appDbContext = appDbContext;
+        }
+
+        // public List<Movie> GetMoviesByTitle(int year) => this.context.Movies.Where(x => x.Title == title).ToList();
+        public List<Movie> GetMoivesByFirstName(string title)
+        {
+            return this._appDbContext.Movies.Where(x => x.Title == title).ToList();
         }
     }
 }
