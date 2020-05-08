@@ -47,19 +47,7 @@ namespace MovieReviews.Data
                 .WithMany(t => t.MovieDirectors)
                 .HasForeignKey(pt => pt.directorId);
 
-            // many to many for Movies and Genres
-            modelBuilder.Entity<MovieGenre>()
-                .HasKey(t => new { t.movieId, t.genreId });
-
-            modelBuilder.Entity<MovieGenre>()
-                .HasOne(pt => pt.Movie)
-                .WithMany(p => p.MovieGenres)
-                .HasForeignKey(pt => pt.movieId);
-
-            modelBuilder.Entity<MovieGenre>()
-                .HasOne(pt => pt.Genre)
-                .WithMany(t => t.MovieGenres)
-                .HasForeignKey(pt => pt.genreId);
+    
         }
         // MARK: - Class Properties
 
@@ -81,7 +69,7 @@ namespace MovieReviews.Data
         /// <summary>
         /// Connection to "Genre" table
         /// </summary>
-        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
 
         // MARK: - Constructors
 

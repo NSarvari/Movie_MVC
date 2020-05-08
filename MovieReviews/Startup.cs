@@ -56,7 +56,7 @@ namespace MovieReviews
             services.AddScoped<MovieRepository>();
             services.AddScoped<ActorRepository>();
             services.AddScoped<DirectorRepository>();
-            services.AddScoped<GenreRepository>();
+            
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
             services.AddRazorPages();

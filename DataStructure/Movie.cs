@@ -10,6 +10,8 @@ namespace DataStructure
         // MARK: - Class Properties
         public string Title { get; set; }
 
+        public string Genre { get; set; }
+
         public string Scenarist { get; set; }
 
 
@@ -19,14 +21,16 @@ namespace DataStructure
 
         public string Discreption { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string Duration { get; set; }
 
+        public string MoviePoster { get; set; }
+
+        public string MovieTrailer { get; set; }
 
         // MARK:- Many-to-Many Relationships
         public ICollection<MovieActor> MovieActors { get; set; }
 
         public ICollection<MovieDirector> MovieDirectors { get; set; }
 
-        public ICollection<MovieGenre> MovieGenres { get; set; } 
     }
 }

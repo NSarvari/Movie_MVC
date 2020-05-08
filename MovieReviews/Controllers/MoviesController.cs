@@ -20,9 +20,17 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Movies.ToListAsync());
+            var movies = from m in _context.Movies
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title.Contains(searchString));
+            }
+
+            return View(await movies.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -54,7 +62,7 @@ namespace MovieReviews.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title,Scenarist,ReleasedYear,Award,Discreption,ImageUrl,ID,CreatedAt,UpdatedAt")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Title,Genre,Scenarist,ReleasedYear,Award,Discreption,Duration,MoviePoster,MovieTrailer,ID,CreatedAt,UpdatedAt")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +94,7 @@ namespace MovieReviews.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Title,Scenarist,ReleasedYear,Award,Discreption,ImageUrl,ID,CreatedAt,UpdatedAt")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Title,Genre,Scenarist,ReleasedYear,Award,Discreption,Duration,MoviePoster,MovieTrailer,ID,CreatedAt,UpdatedAt")] Movie movie)
         {
             if (id != movie.ID)
             {

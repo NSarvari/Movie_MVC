@@ -14,3 +14,11 @@ D:\Uni\2ри семестър\.NET\Struggle-master (1)\Struggle-master\DataStruc
 D:\Uni\2ри семестър\.NET\Struggle-master (1)\Struggle-master\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfo.cs
 D:\Uni\2ри семестър\.NET\Struggle-master (1)\Struggle-master\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
 D:\Uni\2ри семестър\.NET\Struggle-master (1)\Struggle-master\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.deps.json
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.dll
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.pdb
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csprojAssemblyReference.cache
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfoInputs.cache
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfo.cs
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
+D:\Uni\2ри семестър\.NET\MovieReviews\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb

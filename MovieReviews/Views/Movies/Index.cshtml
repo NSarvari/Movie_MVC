@@ -16,8 +16,8 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Scenarist)
-            </th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>        
             <th>
                 @Html.DisplayNameFor(model => model.ReleasedYear)
             </th>
@@ -28,7 +28,13 @@
                 @Html.DisplayNameFor(model => model.Discreption)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviePoster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieTrailer)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CreatedAt)
@@ -46,6 +52,9 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Scenarist)
             </td>
             <td>
@@ -58,7 +67,13 @@
                 @Html.DisplayFor(modelItem => item.Discreption)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviePoster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieTrailer)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatedAt)

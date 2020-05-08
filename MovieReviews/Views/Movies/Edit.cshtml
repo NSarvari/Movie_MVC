@@ -18,6 +18,11 @@
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Scenarist" class="control-label"></label>
                 <input asp-for="Scenarist" class="form-control" />
                 <span asp-validation-for="Scenarist" class="text-danger"></span>
@@ -38,9 +43,19 @@
                 <span asp-validation-for="Discreption" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ImageUrl" class="control-label"></label>
-                <input asp-for="ImageUrl" class="form-control" />
-                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoviePoster" class="control-label"></label>
+                <input asp-for="MoviePoster" class="form-control" />
+                <span asp-validation-for="MoviePoster" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieTrailer" class="control-label"></label>
+                <input asp-for="MovieTrailer" class="form-control" />
+                <span asp-validation-for="MovieTrailer" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="ID" />
             <div class="form-group">

@@ -17,6 +17,8 @@ namespace DataStructure
 
         public string Award { get; set; }
 
+        public string ActorPhoto { get; set; }
+
         // MARK:- Many-to-Many Relationships
         public ICollection<MovieActor> MovieActors { get; set; }
     }

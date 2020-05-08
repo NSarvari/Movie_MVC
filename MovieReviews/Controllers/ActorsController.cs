@@ -54,7 +54,7 @@ namespace MovieReviews.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,Residence,Award,ID,CreatedAt,UpdatedAt")] Actor actor)
+        public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,Residence,Award,ActorPhoto,ID,CreatedAt,UpdatedAt")] Actor actor)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MovieReviews.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,DateOfBirth,Residence,Award,ID,CreatedAt,UpdatedAt")] Actor actor)
+        public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,DateOfBirth,Residence,Award,ActorPhoto,ID,CreatedAt,UpdatedAt")] Actor actor)
         {
             if (id != actor.ID)
             {

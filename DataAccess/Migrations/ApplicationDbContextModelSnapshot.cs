@@ -26,6 +26,9 @@ namespace MovieReviews.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ActorPhoto")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Award")
                         .HasColumnType("nvarchar(max)");
 
@@ -50,6 +53,36 @@ namespace MovieReviews.Data.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Actors");
+                });
+
+            modelBuilder.Entity("DataStructure.Contact", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("DataStructure.Director", b =>
@@ -79,30 +112,6 @@ namespace MovieReviews.Data.Migrations
                     b.ToTable("Directors");
                 });
 
-            modelBuilder.Entity("DataStructure.Genre", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Note")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Genres");
-                });
-
             modelBuilder.Entity("DataStructure.Movie", b =>
                 {
                     b.Property<int>("ID")
@@ -119,7 +128,16 @@ namespace MovieReviews.Data.Migrations
                     b.Property<string>("Discreption")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
+                    b.Property<string>("Duration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Genre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MoviePoster")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MovieTrailer")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReleasedYear")
@@ -169,21 +187,6 @@ namespace MovieReviews.Data.Migrations
                     b.ToTable("MovieDirector");
                 });
 
-            modelBuilder.Entity("DataStructure.MovieGenre", b =>
-                {
-                    b.Property<int>("movieId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("genreId")
-                        .HasColumnType("int");
-
-                    b.HasKey("movieId", "genreId");
-
-                    b.HasIndex("genreId");
-
-                    b.ToTable("MovieGenre");
-                });
-
             modelBuilder.Entity("DataStructure.MovieActor", b =>
                 {
                     b.HasOne("DataStructure.Actor", "Actor")
@@ -209,21 +212,6 @@ namespace MovieReviews.Data.Migrations
 
                     b.HasOne("DataStructure.Movie", "Movie")
                         .WithMany("MovieDirectors")
-                        .HasForeignKey("movieId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DataStructure.MovieGenre", b =>
-                {
-                    b.HasOne("DataStructure.Genre", "Genre")
-                        .WithMany("MovieGenres")
-                        .HasForeignKey("genreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("DataStructure.Movie", "Movie")
-                        .WithMany("MovieGenres")
                         .HasForeignKey("movieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
