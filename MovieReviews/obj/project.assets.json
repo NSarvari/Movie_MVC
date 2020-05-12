@@ -10519,11 +10519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\MovieReviews\\MovieReviews.csproj",
+      "projectUniqueName": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\MovieReviews\\MovieReviews.csproj",
       "projectName": "MovieReviews",
-      "projectPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\MovieReviews\\MovieReviews.csproj",
+      "projectPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\MovieReviews\\MovieReviews.csproj",
       "packagesPath": "C:\\Users\\nabii\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\MovieReviews\\obj\\",
+      "outputPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\MovieReviews\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nabii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10539,8 +10539,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataAccess\\DataAccess.csproj"
+            "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataAccess\\DataAccess.csproj"
             }
           }
         }

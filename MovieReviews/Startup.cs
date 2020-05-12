@@ -29,7 +29,8 @@ namespace MovieReviews
             services.AddDbContext<ApplicationDbContext>(options =>
          options.UseSqlServer(
              Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.Configure<IdentityOptions>(options =>
@@ -50,13 +51,13 @@ namespace MovieReviews
                 // User settings.
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                options.User.RequireUniqueEmail = false;
+                options.User.RequireUniqueEmail = true;
             });
 
             services.AddScoped<MovieRepository>();
             services.AddScoped<ActorRepository>();
             services.AddScoped<DirectorRepository>();
-            
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -68,10 +69,18 @@ namespace MovieReviews
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
+                using (var serviceScope = app.ApplicationServices.CreateScope())
+                {
+                    var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+                    dbContext.Database.Migrate();
+                }
             }
             else
             {

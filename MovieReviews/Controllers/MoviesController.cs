@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataStructure;
 using MovieReviews.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieReviews.Controllers
 {
@@ -52,6 +53,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Movies/Create
+        [Authorize(Roles ="Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -61,6 +63,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles ="Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Title,Genre,Scenarist,ReleasedYear,Award,Discreption,Duration,MoviePoster,MovieTrailer,ID")] Movie movie)
         {

@@ -2,10 +2,11 @@
 namespace MovieReviews.Data
 {
     using DataStructure;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser,IdentityRole,string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -19,6 +20,7 @@ namespace MovieReviews.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             // many to many for Movies and Actors
             modelBuilder.Entity<MovieActor>()
                 .HasKey(t => new { t.movieId, t.actorId });
@@ -73,5 +75,6 @@ namespace MovieReviews.Data
 
         // MARK: - Constructors
 
+        public DbSet<MovieDirector> MovieDirectors { get; set; }
     }
 }

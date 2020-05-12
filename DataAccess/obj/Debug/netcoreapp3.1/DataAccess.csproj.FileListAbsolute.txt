@@ -37,3 +37,16 @@ D:\Uni\2ри семестър\.NET\MovieReviews\DataAccess\obj\Debug\netcoreapp3
 D:\Uni\2ри семестър\.NET\MovieReviews\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete
 D:\Uni\2ри семестър\.NET\MovieReviews\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
 D:\Uni\2ри семестър\.NET\MovieReviews\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csprojAssemblyReference.cache
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfoInputs.cache
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.AssemblyInfo.cs
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.dll
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.pdb
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.deps.json
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.json
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.runtimeconfig.dev.json
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.dll
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataAccess.pdb
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataStructure.dll
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\bin\Debug\netcoreapp3.1\DataStructure.pdb
+D:\Uni\2ри семестър\.NET\Struggle\DataAccess\obj\Debug\netcoreapp3.1\DataAccess.csproj.CopyComplete

@@ -9409,11 +9409,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\nabii\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataAccess\\obj\\",
+      "outputPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nabii\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9429,8 +9429,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataStructure\\DataStructure.csproj": {
-              "projectPath": "D:\\Uni\\2ри семестър\\.NET\\MovieReviews\\DataStructure\\DataStructure.csproj"
+            "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataStructure\\DataStructure.csproj": {
+              "projectPath": "D:\\Uni\\2ри семестър\\.NET\\Struggle\\DataStructure\\DataStructure.csproj"
             }
           }
         }

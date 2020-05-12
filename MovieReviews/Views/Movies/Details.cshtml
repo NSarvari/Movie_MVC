@@ -15,7 +15,7 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Title)☞
-            <a asp-area="" asp-controller="Directors" asp-action="">Look For The Director</a>
+            <a asp-area="" asp-controller="Directors" asp-action="" asp-route-movieId="@Model.ID">Look For The Director</a>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Genre)

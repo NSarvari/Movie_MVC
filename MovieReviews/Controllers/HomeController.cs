@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MovieReviews.Models;
@@ -11,15 +12,16 @@ namespace MovieReviews.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(RoleManager<IdentityRole> roleManager)
         {
-            _logger = logger;
+            this.roleManager = roleManager;
         }
 
         public IActionResult Index()
         {
+           
             return View();
         }
 

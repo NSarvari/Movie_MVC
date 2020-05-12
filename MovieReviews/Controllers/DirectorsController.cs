@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataStructure;
 using MovieReviews.Data;
+using MovieReviews.Models.Directors;
 
 namespace MovieReviews.Controllers
 {
@@ -20,9 +21,22 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Directors
-        public async Task<IActionResult> Index()
+
+        public async Task<IActionResult> Index(int? movieId)
         {
-            return View(await _context.Directors.ToListAsync());
+            var directors = await _context.Directors.Select(d=>new AllDirectorsViewModel
+            { 
+                ID=d.ID,
+                FirstName=d.FirstName,
+                LastName=d.LastName,
+                DateOfBirth=d.DateOfBirth,
+                MovieIDs=d.MovieDirectors.Select(md=>md.movieId)
+            }).ToListAsync();
+            if (movieId != null)
+            {
+                directors = directors.Where(d => d.MovieIDs.Any(md => md == movieId)).ToList();
+            }
+            return View(directors);
         }
 
         // GET: Directors/Details/5
