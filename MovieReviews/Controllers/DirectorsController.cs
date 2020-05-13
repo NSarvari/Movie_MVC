@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DataStructure;
 using MovieReviews.Data;
 using MovieReviews.Models.Directors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieReviews.Controllers
 {
@@ -39,25 +40,9 @@ namespace MovieReviews.Controllers
             return View(directors);
         }
 
-        // GET: Directors/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var director = await _context.Directors
-                .FirstOrDefaultAsync(m => m.ID == id);
-            if (director == null)
-            {
-                return NotFound();
-            }
-
-            return View(director);
-        }
 
         // GET: Directors/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -67,6 +52,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,ID")] Director director)
         {
@@ -80,6 +66,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Directors/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -99,6 +86,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,DateOfBirth,ID")] Director director)
         {
@@ -131,6 +119,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Directors/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +139,7 @@ namespace MovieReviews.Controllers
 
         // POST: Directors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

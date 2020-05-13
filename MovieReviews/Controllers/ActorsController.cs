@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataStructure;
 using MovieReviews.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieReviews.Controllers
 {
@@ -20,9 +21,17 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Actors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Actors.ToListAsync());
+            var actors = from a in _context.Actors
+                         select a;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                actors = actors.Where(s => s.FirstName.Contains(searchString));
+            }
+
+            return View(await actors.ToListAsync());
         }
 
         // GET: Actors/Details/5
@@ -44,6 +53,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Actors/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -53,6 +63,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("FirstName,LastName,DateOfBirth,Residence,Award,ActorPhoto,ID")] Actor actor)
         {
@@ -66,6 +77,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Actors/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,6 +97,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FirstName,LastName,DateOfBirth,Residence,Award,ActorPhoto,ID")] Actor actor)
         {
@@ -117,6 +130,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Actors/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -136,6 +150,7 @@ namespace MovieReviews.Controllers
 
         // POST: Actors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

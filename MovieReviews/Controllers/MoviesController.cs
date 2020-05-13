@@ -77,6 +77,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Movies/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -96,6 +97,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Title,Genre,Scenarist,ReleasedYear,Award,Discreption,Duration,MoviePoster,MovieTrailer,ID")] Movie movie)
         {
@@ -128,6 +130,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Movies/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -147,6 +150,7 @@ namespace MovieReviews.Controllers
 
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

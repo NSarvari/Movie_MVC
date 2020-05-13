@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataStructure;
 using MovieReviews.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MovieReviews.Controllers
 {
@@ -47,6 +48,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: MovieDirectors/Create
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             ViewData["directorId"] = new SelectList(_context.Directors, "ID", "ID");
@@ -58,6 +60,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("movieId,directorId")] MovieDirector movieDirector)
         {
@@ -73,6 +76,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: MovieDirectors/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -94,6 +98,7 @@ namespace MovieReviews.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("movieId,directorId")] MovieDirector movieDirector)
         {
@@ -128,6 +133,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: MovieDirectors/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -149,6 +155,7 @@ namespace MovieReviews.Controllers
 
         // POST: MovieDirectors/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Administrator")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<DataStructure.Actor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Famous Actors";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<h1>Famous Actors</h1>
+@if (User.IsInRole("Administrator"))
+{
+    <p>
+        <a asp-action="Create">Add New Actor</a>
+    </p>
+}
+<form asp-controller="Actors" asp-action="Index">
+    <p>
+        Search actor by FirstName: <input type="text" name="SearchString">
+        <input type="submit" value="Search" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -19,47 +27,45 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Residence)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Award)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ActorPhoto)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Residence)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Award)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ActorPhoto)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Residence)
+                </td>
+                <td>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <p>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </p>
+                    }
+
+                    @if (User.IsInRole("User"))
+                    {
+                        <p>
+                            <a asp-action="Details" asp-route-id="@item.ID"> &#9758;Look For More Details</a>
+                        </p>
+                    }
+
+
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

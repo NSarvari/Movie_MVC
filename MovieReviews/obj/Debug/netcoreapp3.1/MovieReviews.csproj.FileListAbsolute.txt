@@ -919,12 +919,10 @@ D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Actors\Index.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Create.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Delete.cshtml.g.cs
-D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Details.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Edit.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Contacts\Index.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Directors\Create.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Directors\Delete.cshtml.g.cs
-D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Directors\Details.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Directors\Edit.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Directors\Index.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs

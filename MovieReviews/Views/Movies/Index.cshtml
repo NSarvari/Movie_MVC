@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DataStructure.Movie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Movies List";
 }
 
 <h1>Movies List</h1>
@@ -14,7 +14,7 @@
 }
 <form asp-controller="Movies" asp-action="Index">
     <p>
-        Search Movie Title: <input type="text" name="SearchString">
+        Search movie by title: <input type="text" name="SearchString">
         <input type="submit" value="Search" />
     </p>
 </form>
@@ -47,9 +47,22 @@
                     @Html.DisplayFor(modelItem => item.ReleasedYear)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <p>
+                            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </p>
+                    }
+
+                    @if (User.IsInRole("User"))
+                    {
+                        <p>
+                            <a asp-action="Details" asp-route-id="@item.ID"> &#9758; Details</a>
+                        </p>
+                    }
+
                 </td>
             </tr>
         }
