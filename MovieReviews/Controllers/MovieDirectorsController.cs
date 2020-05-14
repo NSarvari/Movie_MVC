@@ -27,26 +27,6 @@ namespace MovieReviews.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: MovieDirectors/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var movieDirector = await _context.MovieDirectors
-                .Include(m => m.Director)
-                .Include(m => m.Movie)
-                .FirstOrDefaultAsync(m => m.movieId == id);
-            if (movieDirector == null)
-            {
-                return NotFound();
-            }
-
-            return View(movieDirector);
-        }
-
         // GET: MovieDirectors/Create
         [Authorize(Roles = "Administrator")]
         public IActionResult Create()

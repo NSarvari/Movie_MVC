@@ -4,13 +4,15 @@
     ViewData["Title"] = "The Director";
 }
 
-<h1>The Director</h1>
+<h1>The Director/s</h1>
 
 @if (User.IsInRole("Administrator"))
 {
-    <p>
-        <a asp-action="Create">Add New Director</a>
-    </p>
+<p>
+    <a asp-action="Create">Add New Director</a>
+    <br>
+    <a  asp-area="" asp-controller="MovieDirectors" asp-action="Index">Create connection between Movie and Director</a>
+</p>
 }
 <table class="table">
     <thead>
