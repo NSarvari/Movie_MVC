@@ -35,6 +35,14 @@ namespace MovieReviews
 
             services.Configure<IdentityOptions>(options =>
             {
+                services.Configure<CookiePolicyOptions>(options =>
+                {
+                    // This lambda determines whether user consent for non-essential 
+                    // cookies is needed for a given request.
+                    options.CheckConsentNeeded = context => true;
+                    // requires using Microsoft.AspNetCore.Http;
+                    options.MinimumSameSitePolicy = SameSiteMode.None;
+                });
                 // Password settings.
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = true;
@@ -90,6 +98,7 @@ namespace MovieReviews
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
 
             app.UseRouting();
 

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MovieReviews.Controllers
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,6 +22,7 @@ namespace MovieReviews.Controllers
         }
 
         // GET: Movies
+        //[Authorize)]
         public async Task<IActionResult> Index(string searchString)
         {
             var movies = from m in _context.Movies

@@ -950,3 +950,4 @@ D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+D:\Uni\2ри семестър\.NET\Struggle\MovieReviews\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
